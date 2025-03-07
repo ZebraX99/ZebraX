@@ -1,0 +1,12 @@
+video_paths = ['videos/test/VID_20250214_069_e.mp4']
+intensity_ths = [0, 186]
+area_ths = [75.0, inf]
+tracking_intervals = ""
+number_of_animals = 10
+use_bkg = false
+check_segmentation = false
+resolution_reduction = 1.0
+track_wo_identities = false
+roi_list = [
+    '+ Polygon [[62.5, 41.3], [400.8, 43.4], [422.0, 351.1], [67.8, 351.1]]',
+]
