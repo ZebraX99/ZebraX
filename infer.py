@@ -22,7 +22,7 @@ from idtrackerai import Session
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    stream=sys.stdout  # 将日志输出到标准输出（stdout）
+    stream=sys.stdout  # Output logs to standard output（stdout）
 )
 
 def parse_args():
