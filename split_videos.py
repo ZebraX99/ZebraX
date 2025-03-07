@@ -36,7 +36,7 @@ def split_video(video_path, output_folder):
         clip_time_interval = (i * clip_duration, (i + 1) * clip_duration)
         clip_name = os.path.join(output_folder, f"{video_name}_clip_{clip_time_interval[0]}_{clip_time_interval[1]}.mp4")
         out = cv.VideoWriter(clip_name, cv.VideoWriter_fourcc(*'mp4v'), fps, (int(cap.get(cv.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv.CAP_PROP_FRAME_HEIGHT))), isColor=False)
-        # fourcc = cv.VideoWriter_fourcc(*'MJPG')  # 使用 MJPG 编码器
+        # fourcc = cv.VideoWriter_fourcc(*'MJPG')  # Using MJPG encoder
         # out = cv.VideoWriter(clip_name, fourcc, fps, ((int(cap.get(cv.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv.CAP_PROP_FRAME_HEIGHT)))), isColor=False)
         for j in range(clip_frame_count):
             ret, frame = cap.read()
