@@ -303,8 +303,8 @@ def train_v1(X, Y):
 
             mean_accuracy += accuracy
 
-            print(f"Fold {fold} - 验证集准确率: {accuracy}")
-            print(f"Fold {fold} - 分类报告:\n{report}")
+            print(f"Fold {fold} - Validation set Accuracy: {accuracy}")
+            print(f"Fold {fold} - Classification Report:\n{report}")
             fold += 1
 
         mean_accuracy /= n_splits
