@@ -65,8 +65,8 @@ def run_script():
     except Exception as e:
         messagebox.showerror("Error", f"An unknown error occurred:\n{e}")
 
-video_capture = None  # 用于存储 cv2.VideoCapture 对象
-video_running = False  # 用于控制视频更新循环
+video_capture = None  # Used to store cv2.VideoCapture objects
+video_running = False  # Used to control the video update loop
 
 def play_video(video_path):
     # Open a new window for video playback
@@ -80,7 +80,7 @@ def play_video(video_path):
 
     global video_capture, video_running
 
-    # 如果之前有运行中的视频，先释放资源
+    # If there is a running video, release the resources first.
     if video_capture:
         video_capture.release()
         video_capture = None
@@ -89,11 +89,11 @@ def play_video(video_path):
     cap = cv2.VideoCapture(video_path)
 
     video_capture = cv2.VideoCapture(video_path)
-    video_running = True  # 标记视频正在播放
+    video_running = True  # Mark video playing
 
     def update_frame():
         global video_running
-        if not video_running:  # 如果视频已停止，则退出更新循环
+        if not video_running:  # If the video is stopped, exit the update loop.
             return
 
         ret, frame = cap.read()
@@ -112,7 +112,7 @@ def play_video(video_path):
             video_label.after(30, update_frame)
         else:
             # Release resources and close window after video playback
-            video_running = False  # 视频播放结束
+            video_running = False  # Video playback ends
             cap.release()
             # video_window.destroy()
 
@@ -121,17 +121,17 @@ def play_video(video_path):
 def reset_output():
     global video_capture, video_running
 
-    # 清空视频播放区域
+    # Clear the video playback area
     video_label.configure(image="")
     video_label.imgtk = None
 
-    # 停止视频播放
-    video_running = False  # 停止更新帧
+    # Stop video playback
+    video_running = False  # Stop updating frames
     if video_capture:
-        video_capture.release()  # 释放视频资源
+        video_capture.release()  # Release video resources
         video_capture = None
 
-    # 清空文本输出框
+    # Clear the text output box
     text_output.delete(1.0, tk.END)
 
 # Create the main window
